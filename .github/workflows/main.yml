@@ -23,4 +23,5 @@ jobs:
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
     
     - run: Invoke-WebRequest https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi
+    - run: Invoke-WebRequest https://dl.google.com/chrome/install/latest/chrome_installer.exe
 
