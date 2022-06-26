@@ -20,8 +20,7 @@ jobs:
       run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
-    - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
+    - run: Set-LocalUser -Name "HACKER" -Password (ConvertTo-SecureString -AsPlainText "HACKER" -Force)
     
-Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
-& {$P = $env:TEMP + '\chromeremotedesktophost.msi'; Invoke-WebRequest 'https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi' -OutFile $P; Start-Process $P -Wait; Remove-Item $P}
-& {$P = $env:TEMP + '\chrome_installer.exe'; Invoke-WebRequest 'https://dl.google.com/chrome/install/latest/chrome_installer.exe' -OutFile $P; Start-Process -FilePath $P -Args '/install' -Verb RunAs -Wait; Remove-Item $P}
+    - name: RDX HARIS HACKER
+      run: .\ngrok\ngrok.exe tcp 3389
